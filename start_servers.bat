@@ -1,10 +1,9 @@
 @echo off
-echo Starting MCP and Bee servers...
-
-start cmd /k "cd /d %~dp0 && venv\Scripts\activate && python main.py"
-timeout /t 5
-start cmd /k "cd /d %~dp0 && venv\Scripts\activate && python bee_integration.py"
-
-echo Servers starting...
-echo MCP server running on http://localhost:8000
-echo Bee integration running on http://localhost:8001
+echo Starting MCP Server with Inspector support...
+start cmd /k python main.py
+echo Starting Bee Framework integration server...
+start cmd /k python bee_integration.py
+echo Servers started! 
+echo Main MCP server: http://localhost:8000
+echo MCP Inspector URL: http://localhost:8000
+echo Bee Framework server: http://localhost:8001

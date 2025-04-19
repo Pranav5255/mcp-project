@@ -1,0 +1,32 @@
+{
+    "name": "clothing-combo-advisor",
+    "version": "1.0.0",
+    "description": "MCP server for clothing combination advice",
+    "endpoints": {
+      "http": {
+        "port": 8000,
+        "host": "127.0.0.1"
+      }
+    },
+    "models": [
+      {
+        "name": "clothing-advisor",
+        "version": "1.0.0",
+        "type": "custom",
+        "platform": "fastapi",
+        "endpoints": {
+          "predict": "/v1/models/clothing-advisor:predict",
+          "health": "/health",
+          "metadata": "/metadata"
+        }
+      }
+    ],
+    "inspector": {
+      "enabled": true,
+      "port": 8080
+    },
+    "logging": {
+      "level": "info",
+      "file": "mcp_server.log"
+    }
+  }
